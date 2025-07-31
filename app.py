@@ -7,7 +7,6 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-# ✅ Create the ChatPromptTemplate using from_messages
 prompt = ChatPromptTemplate.from_messages([
     ("system", "You are a helpful assistant. Please provide relevant response to the user queries"),
     ("user", "Question: {question}")
@@ -30,7 +29,6 @@ llm = ChatGroq(
 # Output parser
 output_parser = StrOutputParser()
 
-# ✅ Proper chaining of Runnables
 chain = prompt | llm | output_parser
 
 # Run chain
